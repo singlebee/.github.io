@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1581180778345">
+  <link rel="stylesheet" href="/css/style.css?v=1581223286196">
 
   
 <meta name="generator" content="Hexo 4.2.0"></head>
@@ -97,7 +97,6 @@
 </aside>
     <div class="nexmoe-copyright">
         &copy; 2020 SingleBee
-        <br>
         <span id="sitetime"></span>
     </div>
 </div><!-- .nexmoe-drawer -->
@@ -117,25 +116,17 @@
         var todayHour = today.getHours();
         var todayMinute = today.getMinutes();
         var todaySecond = today.getSeconds();
-        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-        year - 作为date对象的年份，为4位年份值
-        month - 0-11之间的整数，做为date对象的月份
-        day - 1-31之间的整数，做为date对象的天数
-        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-        minutes - 0-59之间的整数，做为date对象的分钟数
-        seconds - 0-59之间的整数，做为date对象的秒数
-        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2020, 02, 07, 22, 00, 00); //建站时间
+        var t1 = Date.UTC(2020, 02, 07, 22, 00, 00); //北京时间2020-2-17 22:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
-        //var diffDays = Math.floor((diff / days) - diffYears * 365);
-        var diffDays = Math.floor((diff / days));
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
         var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
-        //document.getElementById("sitetime").innerHTML = "本站已稳定运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-        document.getElementById("sitetime").innerHTML = "本站已稳定运行 \n" + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        //还没一年，注释掉年
+        //document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
     }
     siteTime();
 </script>
@@ -160,8 +151,8 @@
         </a>
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月08日</a>
-            <a><i class="nexmoefont icon-areachart"></i>2.1k 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+            <a><i class="nexmoefont icon-areachart"></i>2.6k 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
             
             
         </div>
@@ -272,8 +263,10 @@
 <script>hljs.initHighlightingOnLoad();</script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
-<script src="/js/app.js?v=1581180778353"></script>
+<script src="/js/app.js?v=1581223286206"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
 
 
  
